@@ -4,8 +4,12 @@ import BtnComponent from '../BtnComponent';
 import './App.css';
 
 function App() {
+
+  //const setInterv: (value: React.SetStateAction<undefined>) => void
+
   const [time, setTime] = useState({ms:0, s:0, m:0, h:0});
   const [interv, setInterv] = useState();
+  
   const [status, setStatus] = useState(0);
   // Not started = 0
   // started = 1
@@ -14,7 +18,8 @@ function App() {
   const start = () => {
     run();
     setStatus(1);
-    setInterv(setInterval(run, 10));
+    const myinterval:any=setInterval(run, 10);
+    setInterv(myinterval);
   };
 
   var updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
